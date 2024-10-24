@@ -1,0 +1,36 @@
+.odometer {
+    --time: 2s;
+    --odometer-easing: ease;
+    vertical-align: middle;
+  }
+  
+  .odometer .odometer-inside {
+    gap: .5rem;
+  }
+  
+  @media (max-width: 479px) {
+    .odometer .odometer-inside {
+      gap: .2rem;
+    }
+  }
+  
+  .odometer .odometer-digit {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .odometer .odometer-digit .odometer-value.odometer-last-value {
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+  
+  .odometer.odometer-animating-up .odometer-ribbon-inner {
+    -webkit-transition: -webkit-transform var(--time);
+    transition: transform var(--time);
+  }
+  
+  .odometer.odometer-animating-down .odometer-ribbon-inner {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
